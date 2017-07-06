@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <title>电易通APP下载</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        a {
+            text-decoration: none;
+            color: #666;
+        //清除 移动端 a 标签 点击高亮显示
+        -webkit-tap-highlight-color: transparent;
+        }
+        li {
+            list-style: none;
+        }
+        input {
+            border: 0;
+            outline: none;
+        }
+        i,
+        img {
+            vertical-align: middle;
+        }
+        .clearfix::before,
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        html{
+            height: 100%;
+            font-size: 100px;
+        }
+        body{
+            font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+            background: url("appBg.png") no-repeat;
+            background-size: cover;
+            font-size: 16px;
+        }
+        header{
+            padding: 10%;
+            min-width: 3.2rem;
+        }
+        header img{
+            width: 20%;
+            border: 2px solid #fff;
+            border-radius: 5px;
+        }
+        header span{
+            font-size: 0.2rem;
+            margin-left: 8%;
+        }
+        main{
+            padding: 14%;
+            padding-top: 0px;
+            padding-left: 26%;
+            padding-bottom: 10%;
+        }
+        main span{
+            font-size: 0.16rem;
+        }
+        footer{
+            text-align: center;
+        }
+        footer .footerApple{
+            margin-bottom: 6%;
+        }
+        footer .footerApple img{
+            width: 50%;
+        }
+        footer #footerAndoid img{
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="yi.png" alt="">
+    <span>电易通APP下载</span>
+</header>
+<main>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电易通APP是由深圳市科陆电子科技股份有限公司开发的基于智慧能源云平台的手机端应用，具有用电管理、负荷智能监控、电量电费分析、用电方式测算等功能。企业管理人员可通过手机等移动设备快捷高效查看监测企业用电情况。</span>
+</main>
+<footer>
+    <div class="footerApple">
+        <img src="苹果APP.png" alt="">
+    </div>
+    <div id="footerAndoid">
+        <a id="AndoidTar" style="display: block;" href="http://energy.clouyun.com:7010/version/20170705_193130/clou.ydgl-v1.0.apk"><img src="安卓APP.png" alt=""></a>
+    </div>
+</footer>
+<p id="p"></p>
+<i id="tips"></i>
+<p id="text"></p>
+<script>
+    window.onload = function(){
+        var AndoidTar = document.getElementById("AndoidTar");
+        AndoidTar.onclick = function(){
+            if(isWeiXin()){
+                var p = document.getElementById("p");
+                //p.innerHTML = "请点击右上角按钮，使用浏览器打开";
+                p.style.position = "fixed";
+                p.style.left = "0";
+                p.style.right = "0";
+                p.style.top = "0";
+                p.style.bottom = "0";
+                p.style.backgroundColor = "rgba(0,0,0,0.7)";
+                var text = document.getElementById("text");
+                text.innerHTML = "请点击右上角按钮，使用浏览器打开";
+                text.style.color = "white";
+                text.style.fontSize = "18px";
+                text.style.position = "fixed";
+                text.style.top = "0.6rem";
+                text.style.left = "0.15rem";
+                text.style.zIndex = "10";
+
+                var tips = document.getElementById("tips");
+                tips.style.backgroundImage = "url('点击右上角.png')";
+                tips.style.backgroundSize = "100%";
+                tips.style.width = "0.48rem";
+                tips.style.height = "0.48rem";
+                tips.style.position = "fixed";
+                tips.style.top = "0px";
+                tips.style.right = "0.2rem";
+
+
+            }
+        }
+    }
+    function isWeiXin(){
+        var ua = window.navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>
+</body>
+</html>
