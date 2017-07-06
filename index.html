@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
-    <title>电易通APP下载</title>
+    <title>电易通APP下载2</title>
     <style>
         * {
             margin: 0px;
@@ -68,10 +68,10 @@
         footer{
             text-align: center;
         }
-        footer .footerApple{
+        footer #footerApple{
             margin-bottom: 6%;
         }
-        footer .footerApple img{
+        footer #footerApple img{
             width: 50%;
         }
         footer #footerAndoid img{
@@ -88,7 +88,7 @@
     <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电易通APP是由深圳市科陆电子科技股份有限公司开发的基于智慧能源云平台的手机端应用，具有用电管理、负荷智能监控、电量电费分析、用电方式测算等功能。企业管理人员可通过手机等移动设备快捷高效查看监测企业用电情况。</span>
 </main>
 <footer>
-    <div class="footerApple">
+    <div id="footerApple">
         <img src="苹果APP.png" alt="">
     </div>
     <div id="footerAndoid">
@@ -100,6 +100,22 @@
 <p id="text"></p>
 <script>
     window.onload = function(){
+        var isMobile = {
+            Android: function () {
+                return navigator.userAgent.match(/Android/i) ? true : false;
+            },
+            iOS: function () {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;
+            }
+        };
+        var footerApple = document.getElementById("footerApple");
+        var footerAndoid = document.getElementById("footerAndoid");
+        if(isMobile.Android()){
+            footerApple.style.display="none";
+        }else is(isMobile.iOS()){
+            footerAndoid.style.display="none";
+        }
+        
         var AndoidTar = document.getElementById("AndoidTar");
         AndoidTar.onclick = function(){
             if(isWeiXin()){
